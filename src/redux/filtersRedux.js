@@ -50,7 +50,7 @@ export default function reducer(statePart = [], action = {}) {
     case REMOVE_TAG:
       return {
         ...statePart,
-        tags: [ ...statePart.tags, action.payload ],
+        tags: statePart.tags.filter(tag => tag != action.payload),
       };     
     // TODO - handle other action types
     default:
