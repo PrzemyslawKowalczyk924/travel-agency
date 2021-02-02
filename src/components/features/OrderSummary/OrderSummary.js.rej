@@ -1,0 +1,4 @@
+diff a/src/components/features/OrderSummary/OrderSummary.js b/src/components/features/OrderSummary/OrderSummary.js	(rejected hunks)
+@@ -5 +5 @@ const OrderSummary = () => (
+-    <h2 className={styles.component}>Total:<strong>$12.345</strong></h2>
++  <h2 className={styles.component}>Total:<strong>$12.345</strong></h2>
