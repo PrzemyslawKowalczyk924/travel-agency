@@ -11,7 +11,7 @@ const Hero = ({variant = '', titleText, imageSrc, ...otherProps}) => (
 
 Hero.propTypes = {
   variant: PropTypes.string,
-  titleText: PropTypes.node.isRequired,
+  titleText: PropTypes.node,
   imageSrc: PropTypes.string,
 };
 
