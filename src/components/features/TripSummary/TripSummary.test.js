@@ -50,4 +50,22 @@ describe('Component TripSummary', () => {
     );
     console.log(component.debug());
   });
+  it('is there error when is lack of props?', () => {
+    expect(() => shallow(<TripSummary />)).toThrow;
+  });
+  it('it should find tags at proper position', () => {
+    const expectedTags = ['one', 'two', 'three'];
+    const component = shallow(
+      <TripSummary 
+        tags={expectedTags}
+      />
+    );
+    expect(component.find('.tags span').at(0).text()).toEqual(expectedTags[0]);
+    expect(component.find('.tags span').at(1).text()).toEqual(expectedTags[1]);
+    expect(component.find('.tags span').at(2).text()).toEqual(expectedTags[2]);
+  });
+  it('if tags is null, undef or error it shouldnt render', () =>{
+    const component = shallow(<TripSummary/>);
+    expect(component.hasClass('tags')).toBe(false);  
+  });
 });
