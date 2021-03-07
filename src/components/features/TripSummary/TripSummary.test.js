@@ -48,7 +48,6 @@ describe('Component TripSummary', () => {
     expect(component.find('.details span').first().text()).toBe(
       `${expectedDays} days`
     );
-    console.log(component.debug());
   });
   it('is there error when is lack of props?', () => {
     expect(() => shallow(<TripSummary />)).toThrow;
