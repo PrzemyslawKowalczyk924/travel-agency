@@ -74,7 +74,7 @@ OrderForm.propTypes = {
   setOrderOption: PropTypes.func,
   tripId: PropTypes.string,
   tripName: PropTypes.string,
-  tripCountry: PropTypes.string,
+  tripCountry: PropTypes.object,
 };
 
 export default OrderForm;
