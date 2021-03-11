@@ -1,28 +1,20 @@
 @import '../../../styles/settings.scss';
 
 .component {
-    position: relative;
-    padding: ($base-size * 5) 0;
-    margin-bottom: ($base-size * 3);
-    background: lighten($color-dark, 70%);
-    &.small {
-      height: 200px;
-      margin-bottom: 0;
-      padding: ($base-size * 3) 0;
-    }
-    &.light {
-      background: $color-light;
-    }
-    .title {
-      font-size: 18px;
-      text-align: center;
-    }
-    .promoDescription {
-      font-size: 12px;
-      text-align: center;
-    }
-    .countdown {
-      font-size: 12px;
-      text-align: center;
-    }
-  }
+  position: relative;
+  text-align: center;
+  color: #fff;
+}
+
+.title, .promoDescription {
+  position: absolute;
+  width: 100%;
+}
+
+.title {
+  bottom: 40px;
+}
+
+.promoDescription {
+  bottom: 10px;
+}

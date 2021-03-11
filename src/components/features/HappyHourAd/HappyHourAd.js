@@ -3,18 +3,41 @@ import PropTypes from 'prop-types';
 import styles from './HappyHourAd.scss';
 
 class HappyHourAd extends React.Component {
+  constructor(){
+    super();
+    
+    /* run this.forceUpdate() every second */
+    setInterval(() => {this.forceUpdate();}, 1000);
+  }
+
   select = {
     title:  'Happy Hour!',
-    promoDescription: 'Take your chanse, and grab promotion!',    
+    promoDescription: 'Take your chance, and grab promotion!',    
+  }
+
+  getCountDownTime() {
+    const currentTime = new Date();
+    const nextNoon = new Date(Date.UTC(
+      currentTime.getUTCFullYear(),
+      currentTime.getUTCMonth(), 
+      currentTime.getUTCDate(), 12, 0, 0, 0));
+    
+    if(currentTime.getUTCHours() >= 12) {
+      nextNoon.setUTCDate(currentTime.getUTCDate()+1);
+    }
+
+    return Math.round((nextNoon.getTime() - currentTime.getTime())/1000);
   }
 
   render() {
+    const promo = this.getCountDownTime(); 
     const { title, promoDescription } = this.props;
     return (
       <div className={styles.component}>
         <h3 className={styles.title}>{title}</h3>
-        <div className={styles.countdown}></div>
-        <p className={styles.promoDescription}>{promoDescription}</p>
+        <div className={styles.promoDescription}>
+          {promo > 23 * 60 * 60 ? promoDescription : promo }
+        </div>
       </div>
     );  
   }
