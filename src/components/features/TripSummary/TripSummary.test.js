@@ -42,12 +42,8 @@ describe('Component TripSummary', () => {
     );
     const renderedName = component.find('h3').text();
     expect(renderedName).toEqual(expectedName);
-    expect(component.find('.details span').last().text()).toEqual(
-      `from ${expectedCost}`
-    );
-    expect(component.find('.details span').first().text()).toBe(
-      `${expectedDays} days`
-    );
+    {/*expect(component.find('.details span').last().text()).toEqual(`from ${expectedCost}`);*/}
+    expect(component.find('.details span').first().text()).toBe(`${expectedDays} days`);
   });
   it('is there error when is lack of props?', () => {
     expect(() => shallow(<TripSummary />)).toThrow;
@@ -65,6 +61,16 @@ describe('Component TripSummary', () => {
   });
   it('if tags is null, undef or error it shouldnt render', () =>{
     const component = shallow(<TripSummary/>);
-    expect(component.hasClass('tags')).toBe(false);  
+    expect(component.hasClass('tags')).toBe(false);
+    console.log(component.debug());  
   });
+  it('render component TripPrice', () => {
+    const component = shallow(<TripSummary id='' cost='' />);
+    expect(component.find('TripPrice').length).toBe(1);
+  });
+  /* it('should render promoPrice function', () => {
+    const component = shallow(<TripSummary {...mockProps} />);
+    console.log(component.debug());
+    expect(component.text()).toContain(mockProps.cost);
+  }); */
 });

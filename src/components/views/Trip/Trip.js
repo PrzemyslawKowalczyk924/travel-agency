@@ -15,6 +15,7 @@ import styles from './Trip.scss';
 import {Grid, Row, Col} from 'react-flexbox-grid';
 
 import OrderForm from '../../features/OrderForm/OrderFormContainer';
+import TripPrice from '../../features/TripPrice/TripPrice';
 
 const Trip = ({error, name, image, cost, days, description, country, intro, id}) => {
   if(error) return <NotFound />;
@@ -35,7 +36,8 @@ const Trip = ({error, name, image, cost, days, description, country, intro, id})
               </div>
               <List variant='light'>
                 <ListItem title={`<strong>Duration:</strong> ${days} days`} icon='calendar-alt' />
-                <ListItem title={`<strong>Price:</strong> from ${cost}`} icon='money-bill-wave' />
+                <TripPrice icon='money-bill-wave' cost={cost}/>
+                {/*<ListItem title={`<strong>Price:</strong> from ${cost}`} icon='money-bill-wave' />*/}
               </List>
             </Col>
           </Row>
