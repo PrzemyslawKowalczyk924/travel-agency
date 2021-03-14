@@ -13,7 +13,7 @@ const TripSummary = ({id, image, name, cost, days, tags}) => (
         <h3 className={styles.title}>{name}</h3>
         <div className={styles.details}>
           <span>{days} days</span>
-          <TripPrice icon='' cost={cost} />
+          <TripPrice cost={cost} icon=''  />
           {/*<span>from {(new Date).getUTCHours() === 12 ? (`Special price from ${promoPrice(cost)}`) : cost}</span>*/}
         </div>
         <div className={styles.tags}>
