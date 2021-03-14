@@ -1,0 +1,21 @@
+@import '../../../styles/settings.scss';
+
+.component {
+  position: relative;
+  text-align: center;
+  color: #fff;
+}
+
+.title, .description {
+  position: sticky;
+  width: 100%;
+  z-index: 999;
+}
+
+.title {
+  bottom: 40px;
+}
+
+.description {
+  bottom: 10px;
+}

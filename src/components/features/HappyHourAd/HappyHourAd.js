@@ -11,11 +11,6 @@ class HappyHourAd extends React.Component {
     setInterval(() => {this.forceUpdate();}, 1000);
   }
 
-  select = {
-    title:  'Happy Hour!',
-    promoDescription: 'Take your chance, and grab promotion!',    
-  }
-
   getCountDownTime() {
     const currentTime = new Date();
     const nextNoon = new Date(Date.UTC(
@@ -31,8 +26,8 @@ class HappyHourAd extends React.Component {
   }
 
   render() {
-    const promo = this.getCountDownTime(); 
     const { title, promoDescription } = this.props;
+    const promo = this.getCountDownTime(); 
     return (
       <div className={styles.component}>
         <h3 className={styles.title}>{title}</h3>
@@ -46,7 +41,7 @@ class HappyHourAd extends React.Component {
 
 HappyHourAd.propTypes = {
   title: PropTypes.string,
-  promoDescription: PropTypes.string,
+  promoDescription: PropTypes.string.isRequired,
 };
 
 export default HappyHourAd;

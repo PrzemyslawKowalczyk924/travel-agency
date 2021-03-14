@@ -6,7 +6,7 @@ import { promoPrice } from '../../../utils/promoPrice';
 
 const TripPrice = ({icon, cost}) => {
 
-  if((new Date).getUTCHours() >= 12) {
+  if((new Date).getUTCHours() > 12) {
     return(
       <div className={styles.component}>
         <Icon name={icon} />
